@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "dxiimod",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "DXII's extension",
+  "description": "this mod adds cool things id like to see in the base mod.",
   "authors": [
-    "Turnip Labs"
+    "dxii"
   ],
   "contact": {
     "homepage": "",
@@ -19,24 +19,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"dxii.dxiimod.dxiimodMain"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"dxii.dxiimod.dxiimodMain"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"dxii.dxiimod.dxiimodMain"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"dxii.dxiimod.dxiimodMain"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+      "dxiimod.mixins.json"
   ],
 
   "depends": {
-		"minecraft": "~7.1",
+		"minecraft": "7.2.1",
     "fabricloader": ">=0.15.5"
   },
   "suggests": {

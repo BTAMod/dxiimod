@@ -1,9 +1,10 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "turniplabs.examplemod.mixin",
+    "package": "dxii.dxiimod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
+      "FogMixin"
     ],
     "client": [
     ],

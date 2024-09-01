@@ -1,0 +1,17 @@
+itemGroup.dxiimod=Dxii Mod
+
+item.dxiimod.STONE_DAGGER.name=Stone Dagger
+item.dxiimod.STONE_DAGGER.desc=Throwable dagger, useless in close combat but quite useful when thrown
+
+item.dxiimod.STONE_TOMAHAWK.name=Stone Tomahawk
+item.dxiimod.STONE_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat
+
+item.dxiimod.IRON_TOMAHAWK.name=Iron Tomahawk
+item.dxiimod.IRON_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat.
+
+item.dxiimod.GOLD_TOMAHAWK.name=Gold Tomahawk
+item.dxiimod.GOLD_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat. Flies farther.
+
+item.dxiimod.DIAMOND_TOMAHAWK.name=Diamond Tomahawk
+item.dxiimod.DIAMOND_TOMAHAWK.desc=Throwable tomahawk made from incredibly durable material. Will never leave you unless you intentionally throw it away.
+
