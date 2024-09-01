@@ -1,11 +1,8 @@
 package dxii.dxiimod.item;
 
+
 import dxii.dxiimod.entity.EntityStoneDagger;
-import dxii.dxiimod.entity.enemy.EnemyFogLurker;
-import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityDispatcher;
 import net.minecraft.core.entity.EntityLiving;
-import net.minecraft.core.entity.monster.EntityZombie;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -33,8 +30,7 @@ public class stoneDaggerItem extends Item {
 		itemstack.consumeItem(entityplayer);
 		if (!world.isClientSide) {
 			entityplayer.swingItem();
-			Entity ent = EntityDispatcher.createEntityInWorld("dxiimod$foglurker1", world);
-			world.entityJoinedWorld(ent);
+			world.entityJoinedWorld(new EntityStoneDagger(world, entityplayer, !entityplayer.gamemode.areMobsHostile()));
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
 		}

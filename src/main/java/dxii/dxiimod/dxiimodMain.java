@@ -12,15 +12,15 @@ import dxii.dxiimod.render.RenderStoneTomahawk;
 import dxii.dxiimod.render.RenderIronTomahawk;
 import dxii.dxiimod.render.RenderGoldTomahawk;
 import dxii.dxiimod.render.RenderDiamondTomahawk;
-import dxii.dxiimod.render.enemy.ModelFogLurker1;
 import dxii.dxiimod.render.enemy.RenderFogLurker1;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.render.entity.SnowballRenderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+
+
 
 
 public class dxiimodMain implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
