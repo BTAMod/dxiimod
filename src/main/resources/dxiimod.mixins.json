@@ -4,7 +4,10 @@
     "package": "dxii.dxiimod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-      "FogMixin"
+      "RenderModelsMixin",
+      "ItemMixin",
+      "MinecraftMixin",
+      "CombatMixin"
     ],
     "client": [
     ],
