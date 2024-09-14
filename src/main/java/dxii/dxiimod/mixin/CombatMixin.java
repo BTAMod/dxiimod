@@ -1,6 +1,7 @@
 package dxii.dxiimod.mixin;
 
 import dxii.dxiimod.interfaces.INewItemVars;
+import dxii.dxiimod.interfaces.IPlayerControllerStuff;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.controller.PlayerController;
 import net.minecraft.core.entity.Entity;
@@ -10,21 +11,20 @@ import net.minecraft.core.player.gamemode.Gamemode;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
-
-import javax.security.auth.callback.Callback;
 
 
 @Mixin(value = PlayerController.class, remap = false)
-public class CombatMixin {
+public class CombatMixin implements IPlayerControllerStuff {
+
+
 
 	@Final
 	@Shadow
 	protected Minecraft mc;
 
-	@Final
+
 	@Shadow
 	protected int swingCooldown = 0;
 
@@ -91,6 +91,39 @@ public class CombatMixin {
 		}
 	}
 
+	/**
+	 * @author can you
+	 * @reason stop please
+	 */
+	@Overwrite
+	public boolean swingItem(boolean force) {
+		if (this.swingCooldown == 0 || force) {
+			if(this.attackCooldown == 0) {
+				this.mc.thePlayer.swingItem();
+				this.swingCooldown = 5;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Inject(
+		method = "startDestroyBlock(IIILnet/minecraft/core/util/helper/Side;DDZ)V",
+		at = @At(value = "INVOKE", target = "net/minecraft/core/player/gamemode/Gamemode.canInteract ()Z")
+	)
+	private void blockBreakMixin(CallbackInfo ci){
+		if (this.attackCooldown != 0) {
+			return;
+		}
+	}
+
+	@Redirect(
+		method ="continueDestroyBlock(IIILnet/minecraft/core/util/helper/Side;DD)V",
+		at = @At(value = "INVOKE", target = "net/minecraft/core/player/gamemode/Gamemode.canInteract ()Z")
+	)
+	private boolean mineBLock(Gamemode instance){
+		return this.mc.thePlayer.getGamemode().canInteract() && this.attackCooldown == 0;
+	}
 
 	@Inject(
 		method = "tick()V",
@@ -100,6 +133,11 @@ public class CombatMixin {
 		if (this.attackCooldown > 0) {
 			--this.attackCooldown;
 		}
+	}
+
+	@Override
+	public int dxiimod$getAttackDelay(){
+		return this.swingCooldown;
 	}
 
 }

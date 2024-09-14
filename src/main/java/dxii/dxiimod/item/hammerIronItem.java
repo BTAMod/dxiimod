@@ -11,9 +11,10 @@ import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
+import static net.minecraft.core.util.helper.MathHelper.clamp;
+
 public class hammerIronItem extends Item {
 
-	private Minecraft mc;
 
 	public hammerIronItem(String name, int id) {
 		super(name, id);
@@ -31,6 +32,10 @@ public class hammerIronItem extends Item {
 	}
 
 	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
+		double d = clamp(entityliving.x - entityliving1.x, -1, 1);
+		double d1 = clamp(entityliving.z - entityliving1.z, -1, 1);
+		entityliving.push(d * .75, .1,d1 * .75);
+
 		entityliving.hurt(entityliving, 15, DamageType.COMBAT);
 		if( ((EntityPlayer)entityliving1).gamemode != Gamemode.creative ){
 			itemstack.damageItem(1, entityliving);

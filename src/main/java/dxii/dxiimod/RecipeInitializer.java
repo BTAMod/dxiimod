@@ -93,6 +93,30 @@ public class RecipeInitializer {
 					.addInput('Y', Item.stick)
 					.create("steelSpear", new ItemStack(modItems.steelSpear, 1, 0) );
 
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape(" XX",  "XXX", "YX ")
+					.addInput('X', "minecraft:cobblestones")
+					.addInput('Y', Item.stick)
+					.create("stoneGS", new ItemStack(modItems.greatswordStone, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape(" XX",  "XXX", "YX ")
+					.addInput('X', Item.ingotIron)
+					.addInput('Y', Item.stick)
+					.create("ironGS", new ItemStack(modItems.greatswordIron, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape(" XX",  "XXX", "YX ")
+					.addInput('X', Item.ingotGold)
+					.addInput('Y', Item.stick)
+					.create("ironGS", new ItemStack(modItems.greatswordGold, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape(" XX",  "XXX", "YX ")
+					.addInput('X', Item.ingotSteel)
+					.addInput('Y', Item.stick)
+					.create("ironGS", new ItemStack(modItems.greatswordSteel, 1, 0) );
+
 
 	}
 

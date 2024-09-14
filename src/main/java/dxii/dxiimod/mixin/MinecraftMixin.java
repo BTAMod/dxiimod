@@ -24,7 +24,7 @@ public class MinecraftMixin {
 		method = "clickMouse(IZZ)V",
 		at = @At(value = "INVOKE",
 			target = "net/minecraft/client/player/controller/PlayerController.swingItem (Z)Z",
-			ordinal = 0)
+			ordinal = 2)
 	)
 	private void swingMixin2(Args args){
 		args.set(0, false);

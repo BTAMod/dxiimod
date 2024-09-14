@@ -48,3 +48,16 @@ item.dxiimod.DIAMOND_SPEAR.desc=Long melee weapon with pointy sharp tip, pierces
 item.dxiimod.STEEL_SPEAR.name=Steel Spear
 item.dxiimod.STEEL_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets. Very durable.
 
+
+item.dxiimod.STONE_GREATSWORD.name=Stone Greatsword
+item.dxiimod.STONE_GREATSWORD.desc=One of the gigantic straight greatswords. The Greatsword is held with two hands, but its wielder must still be inhumanly strong. "It is this great weight that sends foes flying when hit solidly."
+
+item.dxiimod.IRON_GREATSWORD.name=Zweihander
+item.dxiimod.IRON_GREATSWORD.desc=One of the gigantic straight greatswords. As the name suggests, the Zweihander is held with two hands, but its wielder must still be inhumanly strong. "It is this great weight that sends foes flying when hit solidly."
+
+item.dxiimod.GOLD_GREATSWORD.name=Gold Greatsword
+item.dxiimod.GOLD_GREATSWORD.desc=One of the gigantic straight greatswords. The Greatsword is held with two hands, but its wielder must still be inhumanly strong. "It is this great weight that sends foes flying when hit solidly."
+
+item.dxiimod.STEEL_GREATSWORD.name=Steel Greatsword
+item.dxiimod.STEEL_GREATSWORD.desc=One of the very durable gigantic straight greatswords. The Greatsword is held with two hands, but its wielder must still be inhumanly strong. "It is this great weight that sends foes flying when hit solidly."
+

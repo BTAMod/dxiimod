@@ -15,20 +15,24 @@ import net.minecraft.core.world.World;
 
 import java.util.List;
 
-public class itemSpear extends Item {
+import static net.minecraft.core.util.helper.MathHelper.clamp;
 
-	public float range;
+public class itemGreatsword extends Item {
+
+	public float range = 4;
 	public int coolDown = 15;
 	public int damage = 4;
 	public int durability = 64;
+	public double knockback = .1;
 
 
-	public itemSpear(String name, int id, float range, int cooldown, int durability) {
+	public itemGreatsword(String name, int id, float range, int cooldown, int durability, double knockback) {
 		super(name, id);
 		this.range = range;
 		((INewItemVars)this).dxiimod$setItemRange(range);
 		((INewItemVars)this).dxiimod$setItemCooldown(cooldown);
 		this.setMaxDamage(durability);
+		this.knockback = knockback;
 	}
 
 	@Override
@@ -40,88 +44,45 @@ public class itemSpear extends Item {
 	}
 
 	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving player) {
-		double bound = .4;
+		double bound = 2.5;
+
+		double d = clamp(entityliving.x - player.x, -1, 1);
+		double d1 = clamp(entityliving.z - player.z, -1, 1);
+
 
 		Vec3d plyLook1 = player.getViewVector(1);
-		Vec3d plyLook2 = player.getViewVector(1);
-		Vec3d plyLook3 = player.getViewVector(1);
 
-		plyLook1.xCoord *= range/3;
-		plyLook1.yCoord *= range/3;
-		plyLook1.zCoord *= range/3;
-
-		plyLook2.xCoord *= (range/3) * 2;
-		plyLook2.yCoord *= (range/3) * 2;
-		plyLook2.zCoord *= (range/3) * 2;
-
-		plyLook3.xCoord *= range;
-		plyLook3.yCoord *= range;
-		plyLook3.zCoord *= range;
+		plyLook1.xCoord *= range/2;
+		plyLook1.yCoord *= range/2;
 
 		double AABBpos1x = player.x + plyLook1.xCoord;
 		double AABBpos1y = player.y + player.getHeadHeight() + plyLook1.yCoord;
 		double AABBpos1z = player.z + plyLook1.zCoord;
 
-		double AABBpos2x = player.x + plyLook2.xCoord;
-		double AABBpos2y = player.y + player.getHeadHeight() + plyLook2.yCoord;
-		double AABBpos2z = player.z + plyLook2.zCoord;
-
-		double AABBpos3x = player.x + plyLook3.xCoord;
-		double AABBpos3y = player.y + player.getHeadHeight() + plyLook3.yCoord;
-		double AABBpos3z = player.z + plyLook3.zCoord;
 
 		AABB aabb1 = new AABB(
 			AABBpos1x - bound,
-			AABBpos1y - bound,
+			AABBpos1y - bound/2,
 			AABBpos1z - bound,
 			AABBpos1x + bound,
-			AABBpos1y + bound,
+			AABBpos1y + bound/2,
 			AABBpos1z + bound
 		);
 
-		AABB aabb2 = new AABB(
-			AABBpos2x - bound,
-			AABBpos2y - bound,
-			AABBpos2z - bound,
-			AABBpos2x + bound,
-			AABBpos2y + bound,
-			AABBpos2z + bound
-		);
-
-		AABB aabb3 = new AABB(
-			AABBpos3x - bound,
-			AABBpos3y - bound,
-			AABBpos3z - bound,
-			AABBpos3x + bound,
-			AABBpos3y + bound,
-			AABBpos3z + bound
-		);
-
-
 		List<Entity> entityList = player.world.getEntitiesWithinAABB(EntityLiving.class, aabb1 );
 		for (Entity entity : entityList) {
-			entity.hurt(player, this.damage, DamageType.COMBAT);
+			if(!(entity instanceof EntityPlayer)) {
+				entity.hurt(player, this.damage, DamageType.COMBAT);
+				entity.push(d * this.knockback, .1, d1 * this.knockback);
+			}
 		}
 
-		List<Entity> entityList2 = player.world.getEntitiesWithinAABB(EntityLiving.class, aabb2 );
-		for (Entity entity : entityList2) {
-			entity.hurt(player, this.damage, DamageType.COMBAT);
-		}
-
-		List<Entity> entityList3 = player.world.getEntitiesWithinAABB(EntityLiving.class, aabb3 );
-		for (Entity entity : entityList3) {
-			entity.hurt(player, this.damage, DamageType.COMBAT);
-		}
+		entityliving.world.playSoundAtEntity(entityliving, entityliving, "dxiimod.greatsword_impact", 0.33F, 1F);
 
 		if( ((EntityPlayer)player).gamemode != Gamemode.creative ){
 			itemstack.damageItem(1, entityliving);
 		}
-
-		entityliving.world.playSoundAtEntity(entityliving, entityliving, "random.bow", 1.0F, 0.2F);
-
 		return false;
-
-
 	}
 
 	@Override
