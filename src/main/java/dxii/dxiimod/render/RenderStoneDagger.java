@@ -12,7 +12,7 @@ public class RenderStoneDagger extends EntityRenderer<EntityStoneDagger> {
 
 	@Override
 	public void doRender(Tessellator tessellator, EntityStoneDagger entity, double x, double y, double z, float f, float f1) {
-		float scale = .4f;
+		float scale = .2f;
 		int rot = entity.customRot;
 		this.loadTexture("/assets/dxiimod/textures/entity/stonedagger.png");
 		GL11.glPushMatrix();

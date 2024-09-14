@@ -1,17 +1,50 @@
 itemGroup.dxiimod=Dxii Mod
 
 item.dxiimod.STONE_DAGGER.name=Stone Dagger
-item.dxiimod.STONE_DAGGER.desc=Throwable dagger, useless in close combat but quite useful when thrown
+item.dxiimod.STONE_DAGGER.desc=Throwable dagger, useless in close combat but quite useful when thrown. Has limited melee range.
+
 
 item.dxiimod.STONE_TOMAHAWK.name=Stone Tomahawk
-item.dxiimod.STONE_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat
+item.dxiimod.STONE_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat. Has limited melee range.
 
 item.dxiimod.IRON_TOMAHAWK.name=Iron Tomahawk
-item.dxiimod.IRON_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat.
+item.dxiimod.IRON_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat. Has limited melee range.
 
 item.dxiimod.GOLD_TOMAHAWK.name=Gold Tomahawk
-item.dxiimod.GOLD_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat. Flies farther.
+item.dxiimod.GOLD_TOMAHAWK.desc=Throwable tomahawk which can also be used in melee combat. Flies farther. Has limited melee range.
 
 item.dxiimod.DIAMOND_TOMAHAWK.name=Diamond Tomahawk
-item.dxiimod.DIAMOND_TOMAHAWK.desc=Throwable tomahawk made from incredibly durable material. Will never leave you unless you intentionally throw it away.
+item.dxiimod.DIAMOND_TOMAHAWK.desc=Throwable tomahawk made from incredibly durable materials. Will never leave you unless you intentionally throw it away. Has limited melee range.
+
+
+item.dxiimod.STONE_HAMMER.name=Stone Hammer
+item.dxiimod.STONE_HAMMER.desc=Powerful, yet heavy weapon to crush your enemies to dust!
+
+item.dxiimod.IRON_HAMMER.name=Iron Hammer
+item.dxiimod.IRON_HAMMER.desc=Powerful, yet heavy weapon to crush your enemies to dust!
+
+item.dxiimod.GOLD_HAMMER.name=Gold Hammer
+item.dxiimod.GOLD_HAMMER.desc=Powerful, yet heavy weapon to crush your enemies to dust! Heaviest hammer out there.
+
+item.dxiimod.STEEL_HAMMER.name=Steel Hammer
+item.dxiimod.STEEL_HAMMER.desc=Powerful, yet heavy weapon to crush your enemies to dust! The most durable of the rest.
+
+
+item.dxiimod.WOOD_SPEAR.name=Wooden Spear
+item.dxiimod.WOOD_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets. Fragile.
+
+item.dxiimod.STONE_SPEAR.name=Stone Spear
+item.dxiimod.STONE_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets. Shoot out to our cavemen friends!
+
+item.dxiimod.IRON_SPEAR.name=Iron Spear
+item.dxiimod.IRON_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets.
+
+item.dxiimod.GOLD_SPEAR.name=Gold Spear
+item.dxiimod.GOLD_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets. Not that effective since gold isn't very robust.
+
+item.dxiimod.DIAMOND_SPEAR.name=Diamond Spear
+item.dxiimod.DIAMOND_SPEAR.desc=Long melee weapon with pointy sharp tip, pierces multiple targets.
+
+item.dxiimod.STEEL_SPEAR.name=Steel Spear
+item.dxiimod.STEEL_SPEAR.desc=Long melee weapon with pointy tip, pierces multiple targets. Very durable.
 

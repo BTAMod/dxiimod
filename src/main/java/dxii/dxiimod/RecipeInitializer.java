@@ -34,11 +34,64 @@ public class RecipeInitializer {
 			.create("goldTomahawk", new ItemStack(modItems.goldTomahawk, 1, 0) );
 
 		RecipeBuilder.Shaped("dxiimod")
-			.setShape("XZ ",  "XY ", "  Z")
-			.addInput('X', Item.diamond)
-			.addInput('Y', Item.nethercoal)
-			.addInput('Z', Item.ingotSteel)
-			.create("diamondTomahawk", new ItemStack(modItems.diamondTomahawk, 1, 0) );
+			.setShape("XXX",  "XYX", " Y ")
+			.addInput('X', "minecraft:cobblestones")
+			.addInput('Y', Item.stick)
+			.create("stoneHammer", new ItemStack(modItems.stoneHammer, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("XXX",  "XYX", " Y ")
+					.addInput('X', Item.ingotIron)
+					.addInput('Y', Item.stick)
+					.create("ironHammer", new ItemStack(modItems.ironHammer, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("XXX",  "XYX", " Y ")
+					.addInput('X', Item.ingotGold)
+					.addInput('Y', Item.stick)
+					.create("goldHammer", new ItemStack(modItems.goldHammer, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("XXX",  "XYX", " Y ")
+					.addInput('X', Item.ingotSteel)
+					.addInput('Y', Item.stick)
+					.create("steelHammer", new ItemStack(modItems.steelHammer, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', "minecraft:planks")
+					.addInput('Y', Item.stick)
+					.create("woodenSpear", new ItemStack(modItems.woodenSpear, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', "minecraft:cobblestones")
+					.addInput('Y', Item.stick)
+					.create("stoneSpear", new ItemStack(modItems.stoneSpear, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', Item.ingotIron)
+					.addInput('Y', Item.stick)
+					.create("ironSpear", new ItemStack(modItems.ironSpear, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', Item.ingotGold)
+					.addInput('Y', Item.stick)
+					.create("goldSpear", new ItemStack(modItems.goldSpear, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', Item.diamond)
+					.addInput('Y', Item.stick)
+					.create("diamondSpear", new ItemStack(modItems.diamondSpear, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+					.setShape("X  ",  " Y ", "  Y")
+					.addInput('X', Item.ingotSteel)
+					.addInput('Y', Item.stick)
+					.create("steelSpear", new ItemStack(modItems.steelSpear, 1, 0) );
 
 
 	}

@@ -19,8 +19,8 @@ public class EntityDiamondTomahawk extends EntityProjectile{
 	}
 
 	public void init() {
-		this.defaultGravity = 0.08F;
-		this.defaultProjectileSpeed = 0.9F;
+		this.defaultGravity = 0.033F;
+		this.defaultProjectileSpeed = 1.0F;
 	}
 
 	public void tick(){
