@@ -2,7 +2,7 @@ itemGroup.dxiimod=Dxii Mod
 
 dxiimod.options=DXII mod
 dxiimod.category.fog=The Fog
-options.dxiimod.fog=The Fog distance (1-4)
+options.dxiimod.fog=The Fog distance (1-6)
 
 item.dxiimod.SUSP_TOTEM.name=Suspiciously looking totem
 item.dxiimod.SUSP_TOTEM.desc=Strange wooden totem.

@@ -85,7 +85,7 @@ public class dxiimodMain implements ModInitializer, GameStartEntrypoint, RecipeE
 
 	public static void optionsInit(GameSettings gs){
 		//credits to big sir for conveniently showing me how to implement mod's own settings :troll
-		FogDist = new RangeOption(gs, MOD_ID+ ".fog", 1, 5);
+		FogDist = new RangeOption(gs, MOD_ID+ ".fog", 1, 7);
 
 	}
 

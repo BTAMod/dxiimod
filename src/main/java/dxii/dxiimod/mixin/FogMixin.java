@@ -19,16 +19,16 @@ public class FogMixin {
 	)
 	private int mixinVar(RenderDistance instance){
 		if(Minecraft.getMinecraft(Minecraft.class).theWorld != null) {
-			int fogDay = ((IWorldVariables)(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData() )).dxiimod$getFogDay();
+			double fogDay = ((IWorldVariables)(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData() )).dxiimod$getFogDay();
 
 			if(((IWorldVariables)(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData() )).dxiimod$getFog()) {
-				if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .85)) {
-					return MathHelper.clamp(dxiimodMain.FogDist.value, 1, 5);
-				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .7)) {
-					return 4;
-				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .5)) {
+				if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + 1.35)) {
+					return MathHelper.clamp(dxiimodMain.FogDist.value, 1, 6);
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + 1.2)) {
+					return MathHelper.clamp(dxiimodMain.FogDist.value, 4, 6);
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + 1)) {
 					return 8;
-				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .2)) {
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .7)) {
 					return 16;
 				} else {
 					return 24;

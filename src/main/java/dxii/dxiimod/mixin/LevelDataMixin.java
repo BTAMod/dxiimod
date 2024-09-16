@@ -46,8 +46,8 @@ public class LevelDataMixin implements IWorldVariables {
 		at = @At(value = "INVOKE", target = "com/mojang/nbt/CompoundTag.putLong (Ljava/lang/String;J)V")
 	)
 	public void updateTagMixin(CompoundTag levelTag, CompoundTag playerTag, CallbackInfo ci){
-		levelTag.putBoolean("FogEnabled", this.isFog);
 		levelTag.putInt("FogDay", this.fogDay);
+		levelTag.putBoolean("FogEnabled", this.isFog);
 	}
 
 	@Inject(
@@ -55,8 +55,8 @@ public class LevelDataMixin implements IWorldVariables {
 		at = @At(value = "INVOKE", target = "com/mojang/nbt/CompoundTag.getLong (Ljava/lang/String;)J")
 	)
 	public void readTagMixin(CompoundTag tag, CallbackInfo ci){
-		this.isFog = tag.getBoolean("FogEnabled");
 		this.fogDay = tag.getInteger("FogDay");
+		this.isFog = tag.getBoolean("FogEnabled");
 	}
 
 

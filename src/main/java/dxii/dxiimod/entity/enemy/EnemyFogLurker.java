@@ -36,7 +36,7 @@ public class EnemyFogLurker extends EntityMonster {
 		this.entityToAttack = null;
 		this.bbWidth = this.bbWidth * 1.5f;
 //this is not readable like.. at all, it basically checks if foglurker can even exist here, only if fog is at its fullest
-		if( !( ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog() ) || ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() < ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + .85){
+		if( !( ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog() ) || this.world.getWorldTime() / 24000f + .5 < ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + 1.4){
 			this.remove();
 		}
 	}
@@ -150,7 +150,7 @@ public class EnemyFogLurker extends EntityMonster {
 			return (Block.blocksList[id].hasTag(BlockTags.PASSIVE_MOBS_SPAWN) || id == Block.layerSnow.id)
 				&& this.world.getFullBlockLightValue(x, y, z) > 1
 				&& ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog()
-				&& ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFogDay() > ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + .85
+				&& this.world.getWorldTime() / 24000f + .5 > ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + 1.4
 				;
 		}
 		return false;

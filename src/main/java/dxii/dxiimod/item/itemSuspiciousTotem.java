@@ -23,7 +23,7 @@ public class itemSuspiciousTotem extends Item {
 			}
 
 			((IWorldVariables) (world.getLevelData())).dxiimod$setFog(true);
-			((IWorldVariables) (world.getLevelData())).dxiimod$setFogDay((int)(world.getWorldTime() / 24000f + 1));
+			((IWorldVariables) (world.getLevelData())).dxiimod$setFogDay( (int)(world.getWorldTime() / 24000f) );
 
 			itemstack.consumeItem(entityplayer);
 		}
