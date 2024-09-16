@@ -5,7 +5,7 @@ dxiimod.category.fog=The Fog
 options.dxiimod.fog=The Fog distance (1-4)
 
 item.dxiimod.SUSP_TOTEM.name=Suspiciously looking totem
-item.dxiimod.SUSP_TOTEM.desc=I don't remember making it...
+item.dxiimod.SUSP_TOTEM.desc=Strange wooden totem.
 
 item.dxiimod.THROWING_DAGGER.name=Throwing Dagger
 item.dxiimod.THROWING_DAGGER.desc=Primitive throwable dagger, useless in close combat but quite useful when thrown. Pierces multiple targets. Has limited melee range.
