@@ -2,12 +2,12 @@ package dxii.dxiimod.item;
 
 import dxii.dxiimod.entity.EntityGoldTomahawk;
 import dxii.dxiimod.interfaces.INewItemVars;
-import net.minecraft.core.entity.EntityLiving;
+import dxii.dxiimod.interfaces.IWorldVariables;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.gamemode.Gamemode;
-import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
@@ -19,13 +19,8 @@ public class tomahawkGoldItem extends Item {
 		((INewItemVars)this).dxiimod$setItemRange(3f);
 	}
 
-	public boolean isFull3D() {
-		return true;
-	}
-
-	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
-		entityliving.hurt(entityliving, 4, DamageType.COMBAT);
-		return false;
+	public int getDamageVsEntity(Entity entity) {
+		return 4;
 	}
 
 	@Override

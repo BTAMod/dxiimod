@@ -9,11 +9,12 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
 
-public class EntityStoneDagger extends EntityProjectile{
+public class EntityDagger extends EntityProjectile{
 	public int customRot;
-	public boolean playerCreative = false;
+	public int penetrations;
+	public boolean playerCreative;
 
-	public EntityStoneDagger(World world, EntityLiving entityliving, boolean playerCreative) {
+	public EntityDagger(World world, EntityLiving entityliving, boolean playerCreative) {
 		super(world, entityliving);
 		this.playerCreative = playerCreative;
 	}
@@ -25,13 +26,13 @@ public class EntityStoneDagger extends EntityProjectile{
 
 	public void tick(){
 		super.tick();
-		customRot = customRot + 50;
+		customRot = customRot + 45;
 	}
 
 	public void onHit(HitResult hitResult) {
 		if (hitResult.hitType == HitResult.HitType.TILE) {
 			if(!playerCreative) {
-				EntityItem item = new EntityItem(this.world, this.x, this.y, this.z, new ItemStack(modItems.stoneDagger, 1));
+				EntityItem item = new EntityItem(this.world, this.x, this.y, this.z, new ItemStack(modItems.trowingDagger, 1));
 				this.world.entityJoinedWorld(item);
 			}
 			this.remove();
@@ -41,8 +42,10 @@ public class EntityStoneDagger extends EntityProjectile{
 
 		if (hitResult.hitType == HitResult.HitType.ENTITY) {
 			hitResult.entity.hurt(this.owner, 4, DamageType.COMBAT);
-//			world.playSoundAtEntity(world.getClosestPlayer(this.x, this.y, this.z, 20.0), this, "random.drr", 0.5F, 1f);
-			this.remove();
+			if(penetrations > 3){
+				this.remove();
+			}
+			penetrations++;
 		}
 
 	}

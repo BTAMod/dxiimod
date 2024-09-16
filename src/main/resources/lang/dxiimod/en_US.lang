@@ -1,7 +1,14 @@
 itemGroup.dxiimod=Dxii Mod
 
-item.dxiimod.STONE_DAGGER.name=Stone Dagger
-item.dxiimod.STONE_DAGGER.desc=Throwable dagger, useless in close combat but quite useful when thrown. Has limited melee range.
+dxiimod.options=DXII mod
+dxiimod.category.fog=The Fog
+options.dxiimod.fog=The Fog distance (1-4)
+
+item.dxiimod.SUSP_TOTEM.name=Suspiciously looking totem
+item.dxiimod.SUSP_TOTEM.desc=I don't remember making it...
+
+item.dxiimod.THROWING_DAGGER.name=Throwing Dagger
+item.dxiimod.THROWING_DAGGER.desc=Primitive throwable dagger, useless in close combat but quite useful when thrown. Pierces multiple targets. Has limited melee range.
 
 
 item.dxiimod.STONE_TOMAHAWK.name=Stone Tomahawk

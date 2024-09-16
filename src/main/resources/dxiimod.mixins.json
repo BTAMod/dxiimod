@@ -5,9 +5,12 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
       "RenderModelsMixin",
+      "FogMixin",
       "ItemMixin",
       "MinecraftMixin",
-      "CombatMixin"
+      "CombatMixin",
+      "GameOptionsMixin",
+      "LevelDataMixin"
     ],
     "client": [
     ],

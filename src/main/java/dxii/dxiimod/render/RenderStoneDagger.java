@@ -1,17 +1,16 @@
 package dxii.dxiimod.render;
 
-import dxii.dxiimod.entity.EntityStoneDagger;
+import dxii.dxiimod.entity.EntityDagger;
 import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.tessellator.Tessellator;
 import org.lwjgl.opengl.GL11;
 
-public class RenderStoneDagger extends EntityRenderer<EntityStoneDagger> {
+public class RenderStoneDagger extends EntityRenderer<EntityDagger> {
 
 	public RenderStoneDagger(){ this.shadowSize = 0.1f; }
 
 	@Override
-	public void doRender(Tessellator tessellator, EntityStoneDagger entity, double x, double y, double z, float f, float f1) {
+	public void doRender(Tessellator tessellator, EntityDagger entity, double x, double y, double z, float f, float f1) {
 		float scale = .2f;
 		int rot = entity.customRot;
 		this.loadTexture("/assets/dxiimod/textures/entity/stonedagger.png");

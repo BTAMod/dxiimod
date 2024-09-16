@@ -1,32 +1,26 @@
 package dxii.dxiimod.item;
 
 
-import dxii.dxiimod.entity.EntityStoneDagger;
+import dxii.dxiimod.entity.EntityDagger;
 import dxii.dxiimod.interfaces.INewItemVars;
-import net.minecraft.core.entity.EntityLiving;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.gamemode.Gamemode;
-import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class daggerStoneItem extends Item {
+public class throwingDaggerItem extends Item {
 
-	public daggerStoneItem(String name, int id) {
+	public throwingDaggerItem(String name, int id) {
 		super(name, id);
-		this.maxStackSize = 64;
+		this.maxStackSize = 32;
 		((INewItemVars)this).dxiimod$setItemRange(2f);
 	}
 
-	public boolean isFull3D() {
-		return true;
-	}
-
-	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
-		entityliving.hurt(entityliving, 3, DamageType.COMBAT);
-		return false;
+	public int getDamageVsEntity(Entity entity) {
+		return 3;
 	}
 
 	@Override
@@ -40,7 +34,7 @@ public class daggerStoneItem extends Item {
 		itemstack.consumeItem(entityplayer);
 		if (!world.isClientSide) {
 			entityplayer.swingItem();
-			world.entityJoinedWorld(new EntityStoneDagger(world, entityplayer, !entityplayer.gamemode.areMobsHostile()));
+			world.entityJoinedWorld(new EntityDagger(world, entityplayer, !entityplayer.gamemode.areMobsHostile()));
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		}
 

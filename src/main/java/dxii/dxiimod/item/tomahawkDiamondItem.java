@@ -2,12 +2,11 @@ package dxii.dxiimod.item;
 
 import dxii.dxiimod.entity.EntityDiamondTomahawk;
 import dxii.dxiimod.interfaces.INewItemVars;
-import net.minecraft.core.entity.EntityLiving;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.gamemode.Gamemode;
-import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
@@ -19,9 +18,8 @@ public class tomahawkDiamondItem extends Item {
 		((INewItemVars)this).dxiimod$setItemRange(3f);
 	}
 
-	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
-		entityliving.hurt(entityliving, 6, DamageType.COMBAT);
-		return false;
+	public int getDamageVsEntity(Entity entity) {
+		return 6;
 	}
 
 	@Override
@@ -40,9 +38,5 @@ public class tomahawkDiamondItem extends Item {
 		return itemstack;
 	}
 
-	/*
-	public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer ply, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
-		ply.hurt(ply, 1000, DamageType.COMBAT);
-		return false;
-	}*/
+
 }
