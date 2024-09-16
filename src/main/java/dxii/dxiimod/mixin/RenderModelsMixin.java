@@ -14,8 +14,9 @@ public class RenderModelsMixin {
 	@Shadow
 	private boolean compiled;
 
-	@Inject(method = "render(F)V", at = @At(value = "INVOKE", target = "net/minecraft/client/render/model/Cube.compileDisplayList (F)V"))
-	public void hotswapMixin(float scale, CallbackInfo ci){
+
+	@Inject(method = "addBox(FFFIIIF)V", at = @At(value = "HEAD") )
+	public void hotswapMixin(float minX, float minY, float minZ, int sizeX, int sizeY, int sizeZ, float expandAmount, CallbackInfo ci){
 		this.compiled = false;
 	}
 }

@@ -1,12 +1,14 @@
 package dxii.dxiimod.mixin;
 
 
+import dxii.dxiimod.interfaces.IWorldVariables;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.option.enums.RenderDistance;
 import net.minecraft.client.render.WorldRenderer;
+import net.minecraft.core.util.helper.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
+import dxii.dxiimod.dxiimodMain;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = WorldRenderer.class, remap = false)
@@ -17,28 +19,24 @@ public class FogMixin {
 	)
 	private int mixinVar(RenderDistance instance){
 		if(Minecraft.getMinecraft(Minecraft.class).theWorld != null) {
-			if(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > 3.85){
-				return 1;
-			}
-			else if(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > 3.7){
-				return 4;
-			}
-			else if(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > 3.5){
-				return 8;
-			}
-			else if(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > 3.2){
-				return 16;
-			}
-			else {
-				return 24;
+			int fogDay = ((IWorldVariables)(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData() )).dxiimod$getFogDay();
+
+			if(((IWorldVariables)(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData() )).dxiimod$getFog()) {
+				if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .85)) {
+					return MathHelper.clamp(dxiimodMain.FogDist.value, 1, 5);
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .7)) {
+					return 4;
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .5)) {
+					return 8;
+				} else if (Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f > (fogDay + .2)) {
+					return 16;
+				} else {
+					return 24;
+				}
 			}
 		}
-		else{
-			return 24;
-		}
+		return 24;
 	}
-
-
 
 
 }

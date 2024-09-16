@@ -10,10 +10,26 @@ public class RecipeInitializer {
 
 	public static void Initialize(){
 		RecipeBuilder.Shaped("dxiimod")
+			.setShape("X  ",  "X  ")
+			.addInput('X', "minecraft:logs")
+			.create("suspItem", new ItemStack(modItems.suspiciousTotem, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+			.setShape(" X ",  " X ")
+			.addInput('X', "minecraft:logs")
+			.create("suspItem2", new ItemStack(modItems.suspiciousTotem, 1, 0) );
+
+		RecipeBuilder.Shaped("dxiimod")
+			.setShape("  X",  "  X")
+			.addInput('X', "minecraft:logs")
+			.create("suspItem3", new ItemStack(modItems.suspiciousTotem, 1, 0) );
+
+
+		RecipeBuilder.Shaped("dxiimod")
 			.setShape("X  ",  " Z ")
-			.addInput('X', Item.ammoPebble)
+			.addInput('X', Item.ingotIron)
 			.addInput('Z', Item.stick)
-			.create("stoneDaggerCS", new ItemStack(modItems.stoneDagger, 2, 0) );
+			.create("throwingDagger", new ItemStack(modItems.trowingDagger, 2, 0) );
 
 		RecipeBuilder.Shaped("dxiimod")
 			.setShape("XX ",  "XZ ", "  Z")

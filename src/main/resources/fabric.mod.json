@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "dxiimod",
-  "version": "${version}",
+  "version": "0.2b",
 
   "name": "DXII's extension",
   "description": "this mod adds cool things id like to see in the base mod.",
