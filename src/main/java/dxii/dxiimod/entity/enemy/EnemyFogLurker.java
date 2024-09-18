@@ -21,6 +21,8 @@ public class EnemyFogLurker extends EntityMonster {
 	public int moveBoostDistTR2;
 	public int voicePitch = 1;
 
+	public int alertDelay;
+
 
 	//this mob is geniune nightmare fuel, it kills everything except its own kind
 	public EnemyFogLurker(World world){
@@ -36,9 +38,9 @@ public class EnemyFogLurker extends EntityMonster {
 		this.entityToAttack = null;
 		this.bbWidth = this.bbWidth * 1.5f;
 //this is not readable like.. at all, it basically checks if foglurker can even exist here, only if fog is at its fullest
-		if( !( ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog() ) || this.world.getWorldTime() / 24000f + .5 < ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + 1.4){
-			this.remove();
-		}
+//		if( !( ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog() ) || this.world.getWorldTime() / 24000f + .5 < ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + 1.4){
+//			this.remove();
+//		}
 	}
 
 	public String getEntityTexture() {return "/assets/dxiimod/textures/enemy/foglurker1.png";}
@@ -49,7 +51,7 @@ public class EnemyFogLurker extends EntityMonster {
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
+		alertDelay--;
 		if(this.entityToAttack == null){
 			this.getEntToAttack();
 		}
@@ -59,7 +61,10 @@ public class EnemyFogLurker extends EntityMonster {
 				double pushX = MathHelper.clamp(this.x - this.entityToAttack.x, -1, 1);
 				double pushZ = MathHelper.clamp(this.z - this.entityToAttack.z, -1, 1);
 				this.push(-pushX * this.moveBoost, .01, -pushZ * this.moveBoost);
-				this.world.playSoundAtEntity(null, this, "dxiimod.foglurker_target", this.getSoundVolume(), (this.random.nextFloat() - this.random.nextFloat()) * 0.2f + this.voicePitch);
+				if(alertDelay == 0) {
+					this.world.playSoundAtEntity(null, this, "dxiimod.foglurker_target", this.getSoundVolume(), (this.random.nextFloat() - this.random.nextFloat()) * 0.2f + this.voicePitch);
+					alertDelay = 25;
+				}
 			}
 			if (this.entityToAttack.distanceTo(this) > 20) {
 				this.entityToAttack = null;

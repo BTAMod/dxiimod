@@ -20,7 +20,7 @@ public class itemSpear extends Item {
 	public float range;
 	public int coolDown = 15;
 	public int damage = 4;
-	public int durability = 64;
+	public int durability;
 
 
 	public itemSpear(String name, int id, float range, int cooldown, int durability) {
@@ -117,7 +117,7 @@ public class itemSpear extends Item {
 			itemstack.damageItem(1, entityliving);
 		}
 
-		entityliving.world.playSoundAtEntity(entityliving, entityliving, "random.bow", 1.0F, 0.2F);
+		entityliving.world.playSoundAtEntity(entityliving, entityliving, "dxiimod.stab", .33F, 1F);
 
 		return false;
 

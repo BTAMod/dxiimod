@@ -133,6 +133,12 @@ public class RecipeInitializer {
 					.addInput('Y', Item.stick)
 					.create("ironGS", new ItemStack(modItems.greatswordSteel, 1, 0) );
 
+		RecipeBuilder.Shaped("dxiimod")
+							.setShape(" X ",  "XYX", " X ")
+							.addInput('X', Item.leather)
+							.addInput('Y', "minecraft:planks")
+							.create("buckler", new ItemStack(modItems.shieldBuckler, 1, 0) );
+
 
 	}
 
