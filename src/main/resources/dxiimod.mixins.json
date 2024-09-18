@@ -10,7 +10,9 @@
       "MinecraftMixin",
       "CombatMixin",
       "GameOptionsMixin",
-      "LevelDataMixin"
+      "LevelDataMixin",
+      "EntityLivingMixin",
+      "WandMixin"
     ],
     "client": [
     ],

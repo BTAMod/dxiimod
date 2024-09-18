@@ -55,6 +55,15 @@ public class dxiimodMain implements ModInitializer, GameStartEntrypoint, RecipeE
 		SoundHelper.addSound(MOD_ID, "foglurker_random3.ogg");
 		SoundHelper.addSound(MOD_ID, "foglurker_random4.ogg");
 		SoundHelper.addSound(MOD_ID, "foglurker_target.ogg");
+		SoundHelper.addSound(MOD_ID, "parry.ogg");
+		SoundHelper.addSound(MOD_ID, "ds2_parry.ogg");
+		SoundHelper.addSound(MOD_ID, "shield_swing.ogg");
+		SoundHelper.addSound(MOD_ID, "riposte.ogg");
+		SoundHelper.addSound(MOD_ID, "shield_bash.ogg");
+		SoundHelper.addSound(MOD_ID, "spear.ogg");
+		SoundHelper.addSound(MOD_ID, "throw.ogg");
+		SoundHelper.addSound(MOD_ID, "molotov.ogg");
+		SoundHelper.addSound(MOD_ID, "stab.ogg");
 
 		for(Biome b : Registries.BIOMES){
 			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EnemyFogLurker.class, 300));

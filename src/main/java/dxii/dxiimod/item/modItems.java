@@ -9,6 +9,7 @@ import turniplabs.halplibe.helper.ItemBuilder;
 
 public class modItems{
 	public static itemSuspiciousTotem suspiciousTotem;
+	public static bucklerItem shieldBuckler;
 
 	public static throwingDaggerItem trowingDagger;
 
@@ -63,6 +64,8 @@ public class modItems{
 
 
 		suspiciousTotem = new ItemBuilder(dxiimodMain.MOD_ID).setIcon(dxiimodMain.MOD_ID + ":item/susp_totem").build(new itemSuspiciousTotem("SUSP_TOTEM", dxiimodMain.ITEM_ID++) );
+
+		shieldBuckler = new ItemBuilder(dxiimodMain.MOD_ID).setIcon(dxiimodMain.MOD_ID + ":item/buckler").build(new bucklerItem("BUCKLER", dxiimodMain.ITEM_ID++) );
 	}
 
 }

@@ -33,7 +33,7 @@ public class tomahawkIronItem extends Item {
 		if (!world.isClientSide) {
 			entityplayer.swingItem();
 			world.entityJoinedWorld(new EntityIronTomahawk(world, entityplayer, !entityplayer.gamemode.areMobsHostile()));
-			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			world.playSoundAtEntity(entityplayer, entityplayer, "dxiimod.throw", 0.33F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
 			//System.out.println(Minecraft.getMinecraft(Minecraft.class).theWorld.getLevelData().getWorldTime() / 24000f);
 		}

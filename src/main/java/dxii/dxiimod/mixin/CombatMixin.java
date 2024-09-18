@@ -140,4 +140,9 @@ public class CombatMixin implements IPlayerControllerStuff {
 		return this.swingCooldown;
 	}
 
+	@Override
+	public void dxiimod$setAttackDelay(int ticks){
+		this.attackCooldown += ticks;
+	}
+
 }

@@ -4,6 +4,9 @@ dxiimod.options=DXII mod
 dxiimod.category.fog=The Fog
 options.dxiimod.fog=The Fog distance (1-6)
 
+item.dxiimod.BUCKLER.name=Parrying shield
+item.dxiimod.BUCKLER.desc=A simple item containing incredible power, allows to parry incoming attacks, parried enemies receive more damage.
+
 item.dxiimod.SUSP_TOTEM.name=Suspiciously looking totem
 item.dxiimod.SUSP_TOTEM.desc=Strange wooden totem.
 

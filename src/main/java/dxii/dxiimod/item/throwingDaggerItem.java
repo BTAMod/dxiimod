@@ -35,7 +35,7 @@ public class throwingDaggerItem extends Item {
 		if (!world.isClientSide) {
 			entityplayer.swingItem();
 			world.entityJoinedWorld(new EntityDagger(world, entityplayer, !entityplayer.gamemode.areMobsHostile()));
-			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			world.playSoundAtEntity(entityplayer, entityplayer, "dxiimod.throw", 0.33F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		}
 
 		return itemstack;
