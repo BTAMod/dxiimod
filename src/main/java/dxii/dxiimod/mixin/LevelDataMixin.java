@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-
+//here fog is permanently added to your world >=] (unless you turn off the mod ig)
 @Mixin(value = LevelData.class, remap = false)
 public class LevelDataMixin implements IWorldVariables {
 
@@ -43,7 +43,7 @@ public class LevelDataMixin implements IWorldVariables {
 
 	@Inject(
 		method = "updateTagCompound(Lcom/mojang/nbt/CompoundTag;Lcom/mojang/nbt/CompoundTag;)V",
-		at = @At(value = "INVOKE", target = "com/mojang/nbt/CompoundTag.putLong (Ljava/lang/String;J)V")
+		at = @At(value = "HEAD")
 	)
 	public void updateTagMixin(CompoundTag levelTag, CompoundTag playerTag, CallbackInfo ci){
 		levelTag.putInt("FogDay", this.fogDay);
@@ -52,7 +52,7 @@ public class LevelDataMixin implements IWorldVariables {
 
 	@Inject(
 		method = "readFromCompoundTag(Lcom/mojang/nbt/CompoundTag;)V",
-		at = @At(value = "INVOKE", target = "com/mojang/nbt/CompoundTag.getLong (Ljava/lang/String;)J")
+		at = @At(value = "HEAD")
 	)
 	public void readTagMixin(CompoundTag tag, CallbackInfo ci){
 		this.fogDay = tag.getInteger("FogDay");

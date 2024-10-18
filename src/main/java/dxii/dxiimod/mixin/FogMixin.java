@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import dxii.dxiimod.dxiimodMain;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+
+//first mixin i managed to make, adds harmless fog
 @Mixin(value = WorldRenderer.class, remap = false)
 public class FogMixin {
 	@Redirect(

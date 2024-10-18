@@ -4,6 +4,7 @@ package dxii.dxiimod.item;
 import dxii.dxiimod.entity.EntityDagger;
 import dxii.dxiimod.interfaces.INewItemVars;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -17,6 +18,8 @@ public class throwingDaggerItem extends Item {
 		super(name, id);
 		this.maxStackSize = 32;
 		((INewItemVars)this).dxiimod$setItemRange(2f);
+		((INewItemVars)this).dxiimod$setItemCooldown(2);
+		((INewItemVars)this).dxiimod$setItemUsageCooldown(4);
 	}
 
 	public int getDamageVsEntity(Entity entity) {
@@ -41,9 +44,9 @@ public class throwingDaggerItem extends Item {
 		return itemstack;
 	}
 
-	/*
-	public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer ply, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
-		ply.hurt(ply, 1000, DamageType.COMBAT);
+	@Override
+	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
+		entityliving.heartsFlashTime = 0;
 		return false;
-	}*/
+	}
 }

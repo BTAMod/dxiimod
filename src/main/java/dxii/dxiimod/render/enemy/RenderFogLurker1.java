@@ -13,7 +13,6 @@ public class RenderFogLurker1 extends LivingRenderer<EnemyFogLurker> {
 	protected void preRenderCallback(EnemyFogLurker entity, float f){
 		float scale = 1;
 		GL11.glScalef(scale, scale, scale);
-//		System.out.println("rendering foglurker...");
 	}
 
 }

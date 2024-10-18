@@ -17,7 +17,17 @@ public class MinecraftMixin {
 		ordinal = 1)
 	)
 	private void swingMixin(Args args){
-		args.set(0, false);
+		args.set(0, true);
+	}
+
+	@ModifyArgs(
+		method = "clickMouse(IZZ)V",
+		at = @At(value = "INVOKE",
+			target = "net/minecraft/client/player/controller/PlayerController.swingItem (Z)Z",
+			ordinal = 2)
+	)
+	private void swingMixin1(Args args){
+		args.set(0, true);
 	}
 
 	@ModifyArgs(
@@ -27,7 +37,18 @@ public class MinecraftMixin {
 			ordinal = 2)
 	)
 	private void swingMixin2(Args args){
+		args.set(0, true);
+	}
+
+	@ModifyArgs(
+		method = "clickMouse(IZZ)V",
+		at = @At(value = "INVOKE",
+			target = "net/minecraft/client/player/controller/PlayerController.swingItem (Z)Z",
+			ordinal = 3)
+	)
+	private void swingMixin3(Args args){
 		args.set(0, false);
 	}
+
 
 }

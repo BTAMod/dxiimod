@@ -8,6 +8,7 @@ import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.gamemode.Gamemode;
+import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.season.Seasons;
@@ -16,10 +17,11 @@ import java.util.List;
 
 public class EnemyFogLurker extends EntityMonster {
 
-	public float moveBoost;
-	public int moveBoostDistTR1;
-	public int moveBoostDistTR2;
+	public double moveBoost = .1;
+	public int moveBoostDistTR1 = 10;
+	public int moveBoostDistTR2 = 5;
 	public int voicePitch = 1;
+	public double attackDist = 2;
 
 	public int alertDelay;
 
@@ -31,16 +33,18 @@ public class EnemyFogLurker extends EntityMonster {
 		if(world.getSeasonManager().getCurrentSeason() == Seasons.OVERWORLD_WINTER){
 			this.moveSpeed = .2f;
 		}
-		this.moveBoostDistTR1 = 5;
-		this.moveBoostDistTR2 = 0;
-		this.scoreValue = 200;
+		this.scoreValue = 100;
 		this.attackStrength = 15;
 		this.entityToAttack = null;
-		this.bbWidth = this.bbWidth * 1.5f;
 
 		if( !( ((IWorldVariables) (this.world.getLevelData())).dxiimod$getFog() ) || this.world.getWorldTime() / 24000f + .5 < ((IWorldVariables)(this.world.getLevelData())).dxiimod$getFogDay() + 1.4){
 			this.remove();
 		}
+	}
+
+	@Override
+	public int getMaxHealth() {
+		return 30;
 	}
 
 	public String getEntityTexture() {return "/assets/dxiimod/textures/enemy/foglurker1.png";}
@@ -57,7 +61,7 @@ public class EnemyFogLurker extends EntityMonster {
 		}
 
 		if(this.entityToAttack != null){
-			if (this.entityToAttack.distanceTo(this) <= this.moveBoostDistTR1 && this.entityToAttack.distanceTo(this) < this.moveBoostDistTR1) {
+			if ( this.onGround && this.entityToAttack.distanceTo(this) < this.moveBoostDistTR1 && !(this.entityToAttack.distanceTo(this) < this.moveBoostDistTR2) ) {
 				double pushX = MathHelper.clamp(this.x - this.entityToAttack.x, -1, 1);
 				double pushZ = MathHelper.clamp(this.z - this.entityToAttack.z, -1, 1);
 				this.push(-pushX * this.moveBoost, .01, -pushZ * this.moveBoost);
@@ -75,6 +79,8 @@ public class EnemyFogLurker extends EntityMonster {
 				}
 			}
 			this.searchForPlayers();
+
+
 		}
 	}
 
@@ -86,19 +92,19 @@ public class EnemyFogLurker extends EntityMonster {
 	}
 
 	public void getEntToAttack(){
+		/*
+		there it searches for every living entity to kill,
+		might produce bugs but anyways, it will still prioritize player
+		 */
+
 		double bound = 18;
 		List<Entity> entityList = this.world.getEntitiesWithinAABB(EntityLiving.class, this.bb.expand(bound, bound, bound) );
 
 		for (Entity entity : entityList) {
-
-			String entName = entity.getClass().getName();
 			if (
 				entity instanceof EntityLiving
 				&& !(entity instanceof EnemyFogLurker)
-				&& !entName.equals("net.minecraft.core.entity.player.EntityPlayer")
-				&& !entName.equals("net.minecraft.core.entity.player.EntityPlayerSP")
-				&& !entName.equals("net.minecraft.core.entity.player.EntityPlayerMP")
-
+				&& !(entity instanceof EntityPlayer)
 			) {
 
 				this.entityToAttack = entity;
@@ -107,6 +113,20 @@ public class EnemyFogLurker extends EntityMonster {
 		}
 	}
 
+	@Override
+	protected void attackEntity(Entity entity, float distance) {
+		if (this.attackTime <= 0 && distance < this.attackDist && entity.bb.maxY > this.bb.minY && entity.bb.minY < this.bb.maxY) {
+			this.attackTime = 20;
+			entity.hurt(this, this.attackStrength, DamageType.COMBAT);
+		}
+	}
+
+	public int getTalkInterval() {
+		return 350;
+	}
+
+
+	//all these sounds are me btw >=}
 	@Override
 	public String getLivingSound() {
 		return "dxiimod.foglurker_random";
@@ -145,6 +165,8 @@ public class EnemyFogLurker extends EntityMonster {
 		return 8;
 	}
 
+
+	//it spawns only if world meets requirements (fog)
 	@Override
 	public boolean getCanSpawnHere() {
 		int z;

@@ -1,22 +1,44 @@
 {
-    "required": true,
-    "minVersion": "0.8",
-    "package": "dxii.dxiimod.mixin",
-    "compatibilityLevel": "JAVA_8",
-    "mixins": [
-      "RenderModelsMixin",
-      "FogMixin",
-      "ItemMixin",
-      "MinecraftMixin",
-      "CombatMixin",
-      "GameOptionsMixin",
-      "LevelDataMixin",
-      "EntityLivingMixin",
-      "WandMixin"
-    ],
-    "client": [
-    ],
-    "injectors": {
-        "defaultRequire": 1
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dxii.dxiimod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CombatMixin",
+    "EntityItemMixin",
+    "EntityLivingMixin",
+    "EntityMixin",
+    "EntityPlayerMixin",
+    "FogMixin",
+    "FoodMixin",
+    "GameOptionsMixin",
+    "ItemMixin",
+    "ItemModelDispatcherMixin",
+    "ItemModelMixin",
+    "ItemStackMixin",
+    "ItemSwordMixin",
+    "LabyrinthMixin",
+    "LevelDataMixin",
+    "MinecraftMixin",
+    "PlayerRendererMixin",
+    "RenderModelsMixin",
+    "TexAtlasMixin",
+    "WandMixin",
+    "WorldMixin",
+    "accessors.IAConsumedFood",
+    "accessors.IAContainerPlayer",
+    "accessors.IAEntity",
+    "accessors.IAEntityLiving",
+    "accessors.IAEntityPlayer",
+    "accessors.IAFogManager",
+    "gui.ContainerPlayerMixin",
+    "gui.GuiCreativeMixin",
+    "gui.GuiInventoryMixin",
+    "gui.PlayerInventoryMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
   }
 }

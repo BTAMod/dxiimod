@@ -56,7 +56,7 @@ public class itemModelSpear extends ItemModelStandard {
 		GL11.glTranslatef(-animationProgress * 0.4f, MathHelper.sin(MathHelper.sqrt_float(swingProgress) * (float)Math.PI * 2.0f) * 0.2f, -animationProgress2 * 0.2f);
 		GL11.glTranslatef(0.56f, -0.52f - (1.0f - renderer.getEquippedProgress(partialTick)) * 0.6f - (float) attackDelay / 50, -0.5f -animationProgress);
 		GL11.glRotatef(110, -1.0f, 0.0f, 0.0f);
-		GL11.glRotatef(45, .5f, -1.0f, -.5f);
+		GL11.glRotatef(90, .5f, -1.0f, -.5f);
 		GL11.glEnable(32826);
 		float scale = .4f;
 		GL11.glScalef(scale, scale, scale);

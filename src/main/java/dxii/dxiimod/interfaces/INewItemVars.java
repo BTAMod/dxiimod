@@ -2,13 +2,19 @@ package dxii.dxiimod.interfaces;
 
 public interface INewItemVars {
 
-	boolean dxiimod$itemSwingable();
-	void dxiimod$setItemSwingable(boolean swing);
+	boolean dxiimod$doesBreakBlocks();
+	void dxiimod$setDoesBreakBlocks(boolean breaks);
 
 	int dxiimod$getItemCooldown();
 	void dxiimod$setItemCooldown(int cooldown);
 
-	float dxiimod$getItemRange();
-	void dxiimod$setItemRange(float range);
+	int dxiimod$getItemUsageCooldown();
+	void dxiimod$setItemUsageCooldown(int ucooldown);
+
+	double dxiimod$getItemSpeedMod();
+	void dxiimod$setItemSpeedPenalty(double mod);
+
+	double dxiimod$getItemRange();
+	void dxiimod$setItemRange(double range);
 
 }

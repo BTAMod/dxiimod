@@ -2,7 +2,9 @@ itemGroup.dxiimod=Dxii Mod
 
 dxiimod.options=DXII mod
 dxiimod.category.fog=The Fog
+dxiimod.category.keybinds=Keyboard
 options.dxiimod.fog=The Fog distance (1-6)
+dxiimod.dodge=Dodge
 
 item.dxiimod.BUCKLER.name=Parrying shield
 item.dxiimod.BUCKLER.desc=A simple item containing incredible power, allows to parry incoming attacks, parried enemies receive more damage.
@@ -70,4 +72,75 @@ item.dxiimod.GOLD_GREATSWORD.desc=One of the gigantic straight greatswords. The 
 
 item.dxiimod.STEEL_GREATSWORD.name=Steel Greatsword
 item.dxiimod.STEEL_GREATSWORD.desc=One of the very durable gigantic straight greatswords. The Greatsword is held with two hands, but its wielder must still be inhumanly strong. "It is this great weight that sends foes flying when hit solidly."
+
+item.dxiimod.FLINTLOCK.name=Flintlock pistol
+item.dxiimod.FLINTLOCK.desc=Very powerful bullet shooting contraption. Needs bullets to shoot.
+
+item.dxiimod.FOGRING.name=Ring of Fog
+item.dxiimod.FOGRING.desc=The ring camouflages its wearer's presence, helping to prevent detection.
+
+item.dxiimod.CLOUDBOTTLE.name=Cloud in a Bottle
+item.dxiimod.CLOUDBOTTLE.desc=Allows wearer to double jump. Useful to prevent death from falling.
+
+item.dxiimod.FROGLEG.name=Water beast leg
+item.dxiimod.FROGLEG.desc=Very strong leg of a water beast, allows wearer to jump higher.
+
+item.dxiimod.HORNETRING.name=Hornet ring
+item.dxiimod.HORNETRING.desc=You feel much stronger counter attacking parried enemy.
+
+item.dxiimod.SACRIFICERING.name=Ring of Sacrifice
+item.dxiimod.SACRIFICERING.desc=Its wearer will lose nothing upon death, but the ring itself breaks.
+
+item.dxiimod.SACRIFICERINGBROKEN.name=Broken Ring of Sacrifice
+item.dxiimod.SACRIFICERINGBROKEN.desc=Ring is broken, wearer will still lose everything upon death, but the ring itself doesn't leave the wearer. Can be repaired.
+
+item.dxiimod.SOULPEACE.name=Soul of peace
+item.dxiimod.SOULPEACE.desc=Soul of a peaceful creature.
+
+item.dxiimod.SOULPEACEGREAT.name=Great soul of peace
+item.dxiimod.SOULPEACEGREAT.desc=Chunk of peaceful creatures' souls.
+
+
+item.dxiimod.SOULEVIL.name=Dark soul
+item.dxiimod.SOULEVIL.desc=Soul of a very angry creature.
+
+item.dxiimod.SOULEVILGREAT.name=Great dark soul
+item.dxiimod.SOULEVILGREAT.desc=Chunk of angry creatures' souls.
+
+item.dxiimod.FEATHERFALL.name=Featherfall necklace
+item.dxiimod.FEATHERFALL.desc=Allows wearer to fall slower
+
+item.dxiimod.EVILEYERING.name=Ring of the Evil Eye
+item.dxiimod.EVILEYERING.desc=Heals player a small amount for each enemy killed
+
+item.dxiimod.CHERRYWOODRING.name=Cherry Wood Grain Ring
+item.dxiimod.CHERRYWOODRING.desc=Can be used to slow the loss of items durability. 66% chance to not spend item durability.
+
+item.dxiimod.REDEYE.name=Redeye ring
+item.dxiimod.REDEYE.desc=Becomes easier to be detected by enemies.
+
+item.dxiimod.RTSR.name=Red Tearstone Ring
+item.dxiimod.RTSR.desc=Reacts when the wearer is in danger, temporarily increasing its wearer's physical attack power.
+
+item.dxiimod.GHOOK.name=Grappling Hook
+item.dxiimod.GHOOK.desc=Great mobility tool.
+
+item.dxiimod.DRAGONCREST.name=Elder beast crest ring
+item.dxiimod.DRAGONCREST.desc=Mutes wearer's step sounds, purely cosmetic effect as enemies will still spot you if you're visible.
+
+item.dxiimod.CLORANTHY.name=Cloranthy ring
+item.dxiimod.CLORANTHY.desc=This ancient ring, engraved with a large green flower, is of unknown origin. Hastens its wearer.
+
+item.dxiimod.FERALBONE.name=Feral beast bone
+item.dxiimod.FERALBONE.desc=Wearer digests food three times faster, but gets the Curse of the hungry beast for a day: continuously lose health if not fed for some time.
+
+item.dxiimod.FLAMESPEWER.name=Flame spewer
+item.dxiimod.FLAMESPEWER.desc=Peculiar flame-spewing contraption. Very deadly yet needs time to regain fuel.
+
+item.dxiimod.BULLETIRON.name=Iron bullet
+item.dxiimod.BULLETIRON.desc=Ammunition needed to use flintlock-powered weapons.
+
+item.dxiimod.BULLETSTEEL.name=Steel bullet
+item.dxiimod.BULLETSTEEL.desc=Ammunition needed to use flintlock-powered weapons. Has piercing power.
+
 
